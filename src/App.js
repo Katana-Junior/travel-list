@@ -1,5 +1,8 @@
 import "./App.css";
-
+const initialItems = [
+  { id: 1, description: "Passports", quantity: 2, packed: false },
+  { id: 2, description: "Sunglasses", quantity: 1, packed: true },
+];
 function App() {
   return (
     <div className="app">
@@ -10,6 +13,7 @@ function App() {
     </div>
   );
 }
+
 function Logo() {
   return <h1 className="header">🌴 Far Away 🧳</h1>;
 }
@@ -23,7 +27,15 @@ function Form() {
 }
 
 function PackingList() {
-  return <div className="packing-list">LIST </div>;
+  return (
+    <div className="packing-list">
+      <ul>
+        {initialItems.map((item) => (
+          <Item key={item.id} description={item.description} />
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 function Stats() {
@@ -33,6 +45,13 @@ function Stats() {
         💼You have packed 0 items on your list, and you already packed X(%X)
       </em>
     </footer>
+  );
+}
+function Item() {
+  return (
+    <li>
+      <span>{Item.description}</span>
+    </li>
   );
 }
 
