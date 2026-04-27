@@ -26,12 +26,12 @@ function Form() {
   );
 }
 
-function PackingList() {
+function PackingList({ initialItems }) {
   return (
     <div className="packing-list">
       <ul>
         {initialItems.map((item) => (
-          <Item key={item.id} description={item.description} />
+          <Item.description />
         ))}
       </ul>
     </div>
