@@ -45,11 +45,12 @@ body {
 }
 
 .packing-list {
-  background: rgba(81, 2, 2, 0.903);
+  background: hsla(0, 48%, 13%, 0.815);
   width: 100vw;
   height: 500px;
   display: flex;
   flex-direction: row;
+  color: white;
 }
 
 @keyframes slideUp {
