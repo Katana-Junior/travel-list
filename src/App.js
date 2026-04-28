@@ -8,7 +8,7 @@ function App() {
     <div className="app">
       <Logo />
       <Form />
-      <PackingList />
+      <PackingList initialItems={initialItems} />
       <Stats />
     </div>
   );
@@ -31,7 +31,7 @@ function PackingList({ initialItems }) {
     <div className="packing-list">
       <ul>
         {initialItems.map((item) => (
-          <Item.description />
+          <Item key={item.id} description={item.description} />
         ))}
       </ul>
     </div>
