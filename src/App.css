@@ -36,21 +36,25 @@ body {
   width: 100vw;
   margin: 0;
   height: 50px;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  flex: gap 10;
 }
-
-.add-form:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+.quantity-select {
+  font-size: 0.5rem;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
 }
 
 .packing-list {
   background: hsla(0, 48%, 13%, 0.815);
   width: 100vw;
   height: 500px;
-  display: flex;
-  flex-direction: row;
   color: white;
+  font-weight: bold;
 }
 
 @keyframes slideUp {
