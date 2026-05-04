@@ -17,16 +17,32 @@ function App() {
 function Logo() {
   return <h1 className="header">🌴 Far Away 🧳</h1>;
 }
-
+const [description, setDescription] = useState("");
+const [quantity, setQuantity] = useState(1);
 function Form() {
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
   return (
-    <form className="add-form">
+    <form className="add-form" onSubmit={handleSubmit}>
       <h2>What do you need for your trip?</h2>
-      <select className="quantity-select">
-        {Array.from({length:20}, (_,i)=>i+1).map(num =>
-         ( <option key={num} value={num}>{num}</option>))}
+      <select
+        className="quantity-select"
+        value={quantity}
+        onChange={(e) => setQuantity(Number(e.target.value))}
+      >
+        {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+          <option key={num} value={num}>
+            {num}
+          </option>
+        ))}
       </select>
-      <input type="text" placeholder="Item..." />
+      <input
+        type="text"
+        placeholder="Item..."
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
       <button>➕ </button>
     </form>
   );
