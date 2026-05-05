@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 const initialItems = [
   { id: 1, description: "Passports", quantity: 2, packed: false },
   { id: 2, description: "Sunglasses", quantity: 1, packed: true },
@@ -17,9 +18,9 @@ function App() {
 function Logo() {
   return <h1 className="header">🌴 Far Away 🧳</h1>;
 }
-const [description, setDescription] = useState("");
-const [quantity, setQuantity] = useState(1);
 function Form() {
+  const [description, setDescription] = useState("");
+  const [quantity, setQuantity] = useState(1);
   function handleSubmit(e) {
     e.preventDefault();
   }
