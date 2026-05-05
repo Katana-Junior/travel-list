@@ -40,7 +40,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   padding: 10px;
-  flex: gap 10;
+  gap: 10px;
 }
 .quantity-select {
   font-size: 0.5rem;
