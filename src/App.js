@@ -24,6 +24,9 @@ function Form() {
   function handleSubmit(e) {
     e.preventDefault();
   }
+  function handleAddItem() {
+    if (!description) return;
+  }
   return (
     <form className="add-form" onSubmit={handleSubmit}>
       <h2>What do you need for your trip?</h2>
@@ -44,7 +47,9 @@ function Form() {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <button>➕ </button>
+      <button className="add-btn" onAdd={handleAddItem}>
+        ADD
+      </button>
     </form>
   );
 }

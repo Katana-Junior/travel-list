@@ -42,6 +42,18 @@ body {
   padding: 10px;
   gap: 10px;
 }
+.add-btn {
+  font-size: 0.5rem;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background: rgb(20, 168, 213);
+  color: white;
+}
+.add-btn:hover {
+  background: rgba(67, 94, 101, 0.8);
+  cursor: pointer;
+}
 .quantity-select {
   font-size: 0.5rem;
   padding: 5px;
