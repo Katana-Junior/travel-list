@@ -1,10 +1,19 @@
 import "./App.css";
 import { useState } from "react";
-const initialItems = [
-  { id: 1, description: "Passports", quantity: 2, packed: false },
-  { id: 2, description: "Sunglasses", quantity: 1, packed: true },
-];
+
 function App() {
+  const [items, setItems] = useState([]);
+  const [newItem, setNewItem] = useState("");
+
+  function handleAddItem() {
+    if (!newItem.trim()) return;
+    setItems([
+      ...items,
+      { id: Date.now(), description: newItem, quantity: 1, packed: false },
+    ]);
+    setNewItem("");
+  }
+
   return (
     <div className="app">
       <Logo />
@@ -24,9 +33,6 @@ function Form() {
   function handleSubmit(e) {
     e.preventDefault();
   }
-  function handleAddItem() {
-    if (!description) return;
-  }
   return (
     <form className="add-form" onSubmit={handleSubmit}>
       <h2>What do you need for your trip?</h2>
@@ -43,11 +49,11 @@ function Form() {
       </select>
       <input
         type="text"
-        placeholder="Item..."
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        placeholder="Add item..."
+        value={newItem}
+        onChange={(e) => setNewItem(e.target.value)}
       />
-      <button className="add-btn" onAdd={handleAddItem}>
+      <button className="add-btn" onClick={() => handleAddItem()}>
         ADD
       </button>
     </form>
@@ -58,7 +64,7 @@ function PackingList() {
   return (
     <div className="packing-list">
       <ul>
-        {initialItems.map((item) => (
+        {items.map((item) => (
           <Item key={item.id} item={item} />
         ))}
       </ul>
