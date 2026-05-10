@@ -2,24 +2,37 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(initialItems);
   const [newItem, setNewItem] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
   function handleAddItem() {
     if (!newItem.trim()) return;
     setItems([
       ...items,
-      { id: Date.now(), description: newItem, quantity: 1, packed: false },
+      {
+        id: Date.now(),
+        description: newItem,
+        quantity: quantity,
+        packed: false,
+      },
     ]);
     setNewItem("");
+    setQuantity(1);
   }
 
   return (
     <div className="app">
       <Logo />
-      <Form />
-      <PackingList />
-      <Stats />
+      <Form
+        onAddItem={handleAddItem}
+        quantity={quantity}
+        setQuantity={setQuantity}
+        newItem={newItem}
+        setNewItem={setNewItem}
+      />
+      <PackingList items={items} />
+      <Stats items={items} />
     </div>
   );
 }
@@ -27,10 +40,9 @@ function App() {
 function Logo() {
   return <h1 className="header">🌴 Far Away 🧳</h1>;
 }
-function Form() {
-  const [description, setDescription] = useState("");
-  const [quantity, setQuantity] = useState(1);
+function Form({ onAddItem, quantity, setQuantity, newItem, setNewItem }) {
   function handleSubmit(e) {
+    onAddItem();
     e.preventDefault();
   }
   return (
@@ -60,7 +72,7 @@ function Form() {
   );
 }
 
-function PackingList() {
+function PackingList({ items }) {
   return (
     <div className="packing-list">
       <ul>
@@ -72,7 +84,7 @@ function PackingList() {
   );
 }
 
-function Stats() {
+function Stats({ items }) {
   return (
     <footer className="stats">
       <em>
