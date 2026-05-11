@@ -40,13 +40,14 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   padding: 10px;
-  gap: 10px;
+  gap: 50px;
 }
 .add-btn {
-  font-size: 0.5rem;
+  font-size: 1rem;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
+  width: 100px;
   background: rgb(20, 168, 213);
   color: white;
 }
@@ -67,6 +68,7 @@ body {
   color: white;
   font-weight: bold;
   padding: 20px;
+  font-size: 1rem;
 }
 
 .packing-list ul {
@@ -80,7 +82,7 @@ body {
 }
 
 .items {
-  flex: 0 1 calc(50% - 8px);
+  flex: 0 1 calc(20% - 8px);
   padding: 10px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
@@ -99,7 +101,12 @@ body {
 
 .delete-btn {
   font-size: 0.5rem;
-  padding: 3px;
+  margin-left: 10px;
+  padding: 5px;
+}
+.delete-btn:hover {
+  background: rgba(67, 94, 101, 0.8);
+  cursor: pointer;
 }
 
 .stats {
