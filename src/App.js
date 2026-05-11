@@ -121,13 +121,15 @@ function Stats({ items }) {
 }
 function Item({ item, onDeleteItem, onToggleItem }) {
   return (
-    <li style={item.packed ? { textDecoration: "line-through" } : {}}>
-      <span onClick={() => onToggleItem(item.id)}>{item.description}</span>
-      <span> {item.quantity}</span>
-      <button className="delete-btn" onClick={() => onDeleteItem(item.id)}>
-        ❌
-      </button>
-    </li>
+    <div className="items">
+      <li style={item.packed ? { textDecoration: "line-through" } : {}}>
+        <span onClick={() => onToggleItem(item.id)}>{item.description}</span>
+        <span> {item.quantity}</span>
+        <button className="delete-btn" onClick={() => onDeleteItem(item.id)}>
+          ❌
+        </button>
+      </li>
+    </div>
   );
 }
 

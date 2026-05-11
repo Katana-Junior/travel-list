@@ -64,9 +64,26 @@ body {
 .packing-list {
   background: hsla(0, 48%, 13%, 0.815);
   width: 100vw;
-  height: 500px;
   color: white;
   font-weight: bold;
+  padding: 20px;
+}
+
+.packing-list ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.items {
+  flex: 0 1 calc(50% - 8px);
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
 }
 
 @keyframes slideUp {
@@ -79,6 +96,12 @@ body {
     transform: translateY(0);
   }
 }
+
+.delete-btn {
+  font-size: 0.5rem;
+  padding: 3px;
+}
+
 .stats {
   background: linear-gradient(#3b6d45 100%);
   color: white;
