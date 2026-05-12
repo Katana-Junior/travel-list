@@ -98,11 +98,14 @@ body {
     transform: translateY(0);
   }
 }
-
+.check-box {
+  margin-right: 10px;
+}
 .delete-btn {
   font-size: 0.5rem;
   margin-left: 10px;
   padding: 5px;
+  border: none;
 }
 .delete-btn:hover {
   background: rgba(67, 94, 101, 0.8);
